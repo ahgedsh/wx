@@ -1,0 +1,99 @@
+/* 1像素解决方案 */
+/*
+ * 清除1px
+ */
+/*
+ * 清除浮动
+ */
+/*
+ * mobile
+ */
+/*
+ * 1px
+ */
+/*
+ * text
+ */
+/* 垂直居中 */
+/* 水平居中 */
+/* 水平垂直居中 */
+/* 超出部分出省略号 */
+/* 多行文本超出部分省略号 */
+.hero.white {
+  background: white;
+}
+.section {
+  height: 100vh;
+}
+.hero .description {
+  padding: 0 12%;
+  margin-bottom: 32px;
+}
+.button {
+  display: inline-block;
+  margin: 4px;
+  background: #e0e1e2;
+}
+.button::after {
+  content: none;
+}
+.cards {
+  padding: 16px;
+}
+.card {
+  background: #ffffff;
+  margin-bottom: 16px;
+  transform: 0, 5s all;
+}
+.card.hover {
+  box-shadow: 0 32px 48px rgba(0, 0, 0, 0.07);
+}
+.card image,
+.card video {
+  height: 36vh;
+}
+.card .content {
+  padding: 48rpx 48rpx 64rpx;
+}
+.card .header {
+  font-size: 48rpx;
+  font-weight: bold;
+  letter-spacing: 2rpx;
+  margin-bottom: 48rpx;
+}
+.card .header::after {
+  content: '';
+  display: block;
+  width: 40px;
+  border-bottom: 2px solid #000;
+  padding-bottom: 8px;
+}
+.card .sub-header {
+  font-size: 32rpx;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+.card .description,
+.card .meta {
+  margin-bottom: 8px;
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 32rpx;
+}
+.button {
+  display: inline-block;
+  margin: 4px;
+  background: #e0e1e2;
+  border-radius: 1px;
+  font-size: 32rpx;
+  transform: 0.3s all;
+}
+.button::after {
+  content: none;
+}
+.button:hover {
+  opacity: 0.76;
+}
+.button.primary {
+  background: #000000;
+  color: rgba(255, 255, 255, 0.75);
+}

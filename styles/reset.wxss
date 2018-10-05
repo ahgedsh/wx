@@ -1,0 +1,10 @@
+image{
+    display: block;
+    width: 100%;
+}
+video{
+    width:100%;
+}
+.section{
+    height:100vh;
+  }

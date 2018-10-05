@@ -1,0 +1,146 @@
+<template lang="wxml" minapp="native">
+  <swiper class='section hero white' indicator-dots="{{true}}">
+    <block wx:for="{{slides}}" wx:key="id">
+      <swiper-item>
+        <image src="{{item.image}}" mode="aspectFill" />
+        <view class="content centered">
+          <view class='sub-header'>
+            {{item.sub_header}}
+          </view>
+          <view class='header'>
+            {{item.header}}
+          </view>
+          <view class='description'>
+            {{item.description}}
+          </view>
+          <view class='action'>
+            <button class="button">预约试驾</button>
+            <button class="button primary">了解更多</button>
+          </view>
+
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+
+<view class="cards">
+  <view class="card" hover-class="hover" wx:for="{{entities}}" wx:key="id">
+    <navigator url="/pages/vehicles/show?id={{item.id}}" hover-class="none">
+      <image src="{{item.image}}" mode="aspectFill" />
+      <view class="content">
+        <view class="header">
+          {{item.header}}
+          <view class="sub-header">{{item.sub_header}}</view>
+        </view>
+        <view class="description">{{item.description}}</view>
+        <view class="meta">{{item.meta.price}}</view>
+      </view>
+    </navigator>
+  </view>
+</view>
+
+</template>
+
+<script>
+const app = getApp()
+export default {
+  config: {
+    navigationBarTitleText: '首页',
+    backgroundColor: '#F4F4F4',
+    navigationBarTextStyle: 'black'
+  },
+  data: {
+    entities: null,
+    slides: null
+  },
+  onLoad() {
+    this.setData({
+      slides: app.globalData.slides,
+      entities: app.globalData.vehicles
+    })
+  }
+}
+</script>
+
+<style lang="less">
+.hero.white {
+  background: white;
+}
+.section {
+  height: 100vh;
+}
+.hero .description {
+  padding: 0 12%;
+  margin-bottom: 32px;
+}
+.button {
+  display: inline-block;
+  margin: 4px;
+  background: #e0e1e2;
+}
+.button::after {
+  content: none;
+}
+
+.cards {
+  padding: 16px;
+}
+.card {
+  background: #ffffff;
+  margin-bottom: 16px;
+  transform: 0, 5s all;
+}
+.card.hover {
+  box-shadow: 0 32px 48px rgba(0, 0, 0, 0.07);
+}
+.card image,
+.card video {
+  height: 36vh;
+}
+.card .content {
+  padding: 48rpx 48rpx 64rpx;
+}
+.card .header {
+  font-size: 48rpx;
+  font-weight: bold;
+  letter-spacing: 2rpx;
+  margin-bottom: 48rpx;
+}
+.card .header::after {
+  content: '';
+  display: block;
+  width: 40px;
+  border-bottom: 2px solid #000;
+  padding-bottom: 8px;
+}
+.card .sub-header {
+  font-size: 32rpx;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+.card .description,
+.card .meta {
+  margin-bottom: 8px;
+  color: rgba(0, 0, 0, 0.85);
+
+  font-size: 32rpx;
+}
+.button {
+  display: inline-block;
+  margin: 4px;
+  background: #e0e1e2;
+  border-radius: 1px;
+  font-size: 32rpx;
+  transform: 0.3s all;
+}
+.button::after {
+  content: none;
+}
+.button:hover {
+  opacity: 0.76;
+}
+.button.primary {
+  background: #000000;
+  color: rgba(255, 255, 255, 0.75);
+}
+</style>

@@ -1,0 +1,48 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/home/about",
+    "pages/vehicles/show"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "backgroundColor": "#efefef",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "TouchUI",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "rgba(0,0,0,0.6)",
+    "selectedColor": "#000000",
+    "borderStyle": "white",
+    "backgroundColor": "#ededed",
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/home/index",
+        "iconPath": "assets/app/home.png",
+        "selectedIconPath": "assets/app/home-active.png"
+      },
+      {
+        "text": "关于",
+        "pagePath": "pages/home/about",
+        "iconPath": "assets/app/event.png",
+        "selectedIconPath": "assets/app/event-active.png"
+      },
+      {
+        "text": "视图",
+        "pagePath": "pages/vehicles/show",
+        "iconPath": "assets/app/event.png",
+        "selectedIconPath": "assets/app/event-active.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000
+  },
+  "theme": {
+    "theme-color": "#39f"
+  },
+  "globalData": {}
+}

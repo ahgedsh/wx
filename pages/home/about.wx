@@ -1,0 +1,31 @@
+<template>
+
+
+</template>
+
+
+<script>
+const app=getApp();
+export default {
+  config: {
+    navigationBarTitleText: '关于'
+  },
+  data: {
+    
+   
+  },
+  onLoad(){
+    
+  },
+  
+}
+</script>
+
+<style lang="less">
+
+
+
+
+ 
+
+</style>

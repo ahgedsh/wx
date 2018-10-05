@@ -1,0 +1,94 @@
+<template>
+  <page></page>
+</template>
+
+<script>
+import system from './static/utils/system'
+export default {
+  config: {
+    usingComponents: {},
+    pages: [ 'pages/home/index','pages/home/about','pages/vehicles/show',],
+    window: {
+      backgroundTextStyle: 'dark',
+      backgroundColor: '#efefef',
+      navigationBarBackgroundColor: '#ffffff',
+      navigationBarTitleText: 'TouchUI',
+      navigationBarTextStyle: 'black',
+      enablePullDownRefresh: true
+    },
+    tabBar: {
+      color: 'rgba(0,0,0,0.6)',
+      selectedColor: '#000000',
+      borderStyle: 'white',
+      backgroundColor: '#ededed',
+      list: [{
+          text: '首页',
+          pagePath: 'pages/home/index',
+          iconPath: 'assets/app/home.png',
+          selectedIconPath: 'assets/app/home-active.png'
+        },
+        {
+          text: '关于',
+          pagePath: 'pages/home/about',
+          iconPath: 'assets/app/event.png',
+          selectedIconPath: 'assets/app/event-active.png'
+        },
+        {
+          text: '视图',
+          pagePath: 'pages/vehicles/show',
+          iconPath: 'assets/app/event.png',
+          selectedIconPath: 'assets/app/event-active.png'
+        }
+      ]
+    },
+    networkTimeout: {
+      request: 10000
+    },
+    theme: {
+      'theme-color': '#39f'
+    },
+    globalData: {},
+   
+  },
+   globalData: {
+   
+  },
+  onLaunch() {
+    system.attachInfo()
+    wx.request({
+      url:'https://resources.ninghao.net/wxapp-case/db.json',
+     success:(response)=>{
+      Object.assign(this.globalData,response.data)
+
+      const currentPages=getCurrentPages()
+      if(currentPages.length !==0){
+        currentPages[currentPages.length-1].onLoad()
+      }
+
+     }
+    
+
+      
+    })
+
+  },
+  onShow() {},
+  onHide() {}
+}
+</script>
+
+<style lang="less">
+@import './static/styles/index.less';
+@import './styles/reset.wxss';
+@import './styles/hero.wxss';
+@import './styles/button.wxss';
+
+
+
+page{
+    line-height: 1.5;
+    font-size: 32rpx;
+    background: #f8f8f8;
+}
+
+</style>
